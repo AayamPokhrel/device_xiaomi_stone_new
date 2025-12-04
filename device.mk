@@ -8,7 +8,7 @@
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
 # Datura
-PRODUCT_PACKAGES += Datura
+#PRODUCT_PACKAGES += Datura
 
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
@@ -17,7 +17,7 @@ $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 $(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
 
 # Add common definitions for Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
+#$(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -27,6 +27,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch.mk)
+
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := holi
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -421,7 +424,7 @@ PRODUCT_PACKAGES += \
     init.qti.kernel.sh \
     vendor_modprobe.sh
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qti.display_boot.rc \
     init.qti.kernel.rc \
@@ -449,9 +452,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi \
     hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr \
-    hardware/qcom-caf/common/libqti-perfd-client \
+    #hardware/google/pixel \
+    #hardware/lineage/interfaces/power-libperfmgr \
+    #hardware/qcom-caf/common/libqti-perfd-client \
     vendor/qcom/opensource/usb/etc
 
 # Telephony
@@ -519,6 +522,22 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \
     firmware_WCNSS_qcom_cfg.ini_symlink
+
+# QTI
+TARGET_COMMON_QTI_COMPONENTS := \
+    adreno \
+    audio \
+    av \
+    bt \
+    charging \
+    display \
+    gps \
+    media \
+    overlay \
+    perf \
+    usb \
+    wfd \
+    wlan
 
 # Inherit from proprietary targets
 $(call inherit-product, vendor/xiaomi/stone/stone-vendor.mk)
