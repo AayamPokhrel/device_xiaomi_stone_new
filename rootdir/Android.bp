@@ -16,26 +16,26 @@ prebuilt_etc {
     vendor: true,
 }
 
-prebuilt_etc {
+/*prebuilt_etc {
     name: "init.qcom.rc",
     src: "etc/init.qcom.rc",
     sub_dir: "init/hw",
     vendor: true,
-}
+}*/
 
-prebuilt_etc {
+/*prebuilt_etc {
     name: "init.qti.kernel.rc",
     src: "etc/init.qti.kernel.rc",
     sub_dir: "init/hw",
     vendor: true,
-}
+}*/
 
-prebuilt_etc {
-    name: "init.recovery.qcom.rc",
-    src: "etc/init.recovery.qcom.rc",
-    sub_dir: "init",
-    recovery: true,
-}
+//prebuilt_etc {
+    //name: "init.recovery.qcom.rc",
+    //src: "etc/init.recovery.qcom.rc",
+    //sub_dir: "init",
+    //recovery: true,
+//}
 
 prebuilt_etc {
     name: "init.stnfc.rc",
@@ -51,12 +51,12 @@ prebuilt_etc {
     vendor: true,
 }
 
-prebuilt_etc {
-    name: "ueventd.qcom.rc",
-    filename: "ueventd.rc",
-    src: "etc/ueventd.qcom.rc",
-    vendor: true,
-}
+//prebuilt_etc {
+    //name: "ueventd.qcom.rc",
+    //filename: "ueventd.rc",
+    //src: "etc/ueventd.qcom.rc",
+  //  vendor: true,
+//}
 
 sh_binary {
     name: "init.class_main.sh",
