@@ -4,11 +4,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+#Add Maintainer flags and additional stuffs
+#Maintainer name
+CLOVER_MAINTAINER := AayamPokhrel
+
 # BCR
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
-
-# Datura
-PRODUCT_PACKAGES += Datura
 
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
@@ -27,6 +28,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch.mk)
+
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
