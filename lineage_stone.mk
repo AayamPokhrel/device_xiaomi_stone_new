@@ -4,6 +4,14 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+#MAINTAINER
+SAKURA_MAINTAINER := AayamPokhrel
+#BUILD_TYPE_DEFAULT=VANILLA
+#SAKURA_BUILD_TYPE := gapps
+#GOOGLE_APPS_REPLACES_AOSP'S
+#BUILD_GOOGLE_CONTACTS := true
+#BUILD_GOOGLE_MESSAGE := true
+#BUILD_GOOGLE_DIALER := true
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 TARGET_SUPPORTS_OMX_SERVICE := false
@@ -18,6 +26,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
 
 TARGET_EXCLUDES_AUDIOFX := true
 
