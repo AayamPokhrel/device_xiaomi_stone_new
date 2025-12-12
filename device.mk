@@ -7,17 +7,12 @@
 # BCR
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
-# Datura
-PRODUCT_PACKAGES += Datura
-
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
 # Viper
 $(call inherit-product-if-exists, packages/apps/ViPER4AndroidFX/config.mk)
 
-# Add common definitions for Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -68,7 +63,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libvolumelistener
 
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8350/audio
+
 AUDIO_SKU_DIR := sku_holi
 
 PRODUCT_COPY_FILES += \
@@ -145,10 +140,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@2.0.vendor
 
 PRODUCT_COPY_FILES += \
-    hardware/qcom-caf/sm8350/display/config/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
-    $(LOCAL_PATH)/configs/display_id_4630947218746568833.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947218746568833.xml
+po$(LOCAL_PATH)/configs/display_id_4630947218746568833.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947218746568833.xml
 
-$(call soong_config_set,stagefright,target_disable_thumbnail_block_model,true)
+#$(call soong_config_set,stagefright,target_disable_thumbnail_block_model,true)
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -182,6 +176,8 @@ PRODUCT_PACKAGES += \
     libbatching \
     libgeofencing \
     libgnss
+#power
+PRODUCT_PACKAGES += android.hardware.power-service
 
 PRODUCT_PACKAGES += \
     apdr.conf \
@@ -364,13 +360,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/permissions/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr \
-    libqti-perfd-client
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
@@ -449,9 +440,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi \
     hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr \
-    hardware/qcom-caf/common/libqti-perfd-client \
     vendor/qcom/opensource/usb/etc
 
 # Telephony
