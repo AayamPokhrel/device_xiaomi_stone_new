@@ -10,9 +10,6 @@ $(call inherit-product-if-exists, packages/apps/GameBar/gamebar.mk)
 # BCR
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
-# Datura
-PRODUCT_PACKAGES += Datura
-
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
@@ -366,9 +363,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/privapp-permissions-qti-system-ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-qti-system-ext.xml \
     $(LOCAL_PATH)/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/permissions/qti_whitelist_system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist_system_ext.xml
-#GCAM
-PRODUCT_PACKAGES += \
-    GCamGOPrebuilt
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
