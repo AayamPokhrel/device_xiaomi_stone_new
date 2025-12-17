@@ -13,7 +13,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/euclid/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
@@ -27,7 +27,7 @@ PRODUCT_BRAND := Redmi
 PRODUCT_DEVICE := stone
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Redmi Note 12 5G
-PRODUCT_NAME := lineage_stone
+PRODUCT_NAME := euclid_stone
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 

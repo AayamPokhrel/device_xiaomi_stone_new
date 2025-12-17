@@ -4,6 +4,18 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+
+# GMS
+#TARGET_INCLUDE_STOCK_ARCORE := true
+#TARGET_INCLUDE_PIXEL_LAUNCHER := true
+
+# Extra Packages (Optional)
+TARGET_PREBUILT_LAWNICONS := true
+TARGET_BUILD_DOTGALLERY := true
+
+# Maintainer Name
+EUCLID_MAINTAINER := AayamPokhrel
+
 # GameBar Performance Overlay
 $(call inherit-product-if-exists, packages/apps/GameBar/gamebar.mk)
 
@@ -450,7 +462,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/xiaomi \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/euclid/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
     vendor/qcom/opensource/usb/etc
 
