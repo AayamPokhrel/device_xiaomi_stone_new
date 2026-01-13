@@ -4,9 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-#Add Maintainer flags and additional stuffs
-#Maintainer name
+# Maintainer
 CLOVER_MAINTAINER := AayamPokhrel
+
+# Blur
+TARGET_ENABLE_BLUR := true
 
 # GameBar Performance Overlay
 $(call inherit-product-if-exists, packages/apps/GameBar/gamebar.mk)
