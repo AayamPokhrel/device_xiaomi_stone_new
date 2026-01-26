@@ -10,6 +10,9 @@ CLOVER_MAINTAINER := AayamPokhrel
 # Blur
 TARGET_ENABLE_BLUR := true
 
+# Pixel Launcher
+TARGET_INCLUDE_PIXEL_LAUNCHER := true
+
 # BCR
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
