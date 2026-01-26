@@ -10,9 +10,6 @@ CLOVER_MAINTAINER := AayamPokhrel
 # Blur
 TARGET_ENABLE_BLUR := true
 
-# GameBar Performance Overlay
-$(call inherit-product-if-exists, packages/apps/GameBar/gamebar.mk)
-
 # BCR
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
