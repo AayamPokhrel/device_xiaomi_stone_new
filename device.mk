@@ -93,6 +93,19 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/$(AUDIO_SKU_DIR)/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/$(AUDIO_SKU_DIR)/usb_audio_policy_configuration.xml \
 
+
+# This a experimental fix, will need some experiments removed later according to the test. 
+# Audio - VoIP Stability Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.audio.voip.pcm.samplerate=48000 \
+    persist.vendor.audio.voip_call_concurrency=true \
+    ro.vendor.audio.sdk.fluencetype=none \
+    persist.vendor.audio.fluence.voicecall=false \
+    persist.vendor.audio.fluence.voip=false \
+    audio.deep_buffer.media=true \
+    ro.vendor.audio.afe.record=true \
+    vendor.audio.adm.buffering.ms=6
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \

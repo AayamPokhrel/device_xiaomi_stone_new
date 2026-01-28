@@ -3436,4 +3436,63 @@
     <path name="mmap-record capture-fm">
         <ctl name="MultiMedia16 Mixer SLIM_8_TX" value="1"/>
     </path>
+    
+    <!-- VoIP Stability: Prevent sound trigger interference -->
+    <ctl name="VA_CDC_DMA_TX_0 Channels" value="One"/>
+    <ctl name="VA_CDC_DMA_TX_0 Format" value="S16_LE"/>
+    <ctl name="VA_CDC_DMA_TX_0 SampleRate" value="KHZ_48"/>
+
+    <!-- Default VoIP paths -->
+    <path name="audio-record-voip">
+        <!-- Disable VA interference during VoIP -->
+        <ctl name="VA_CDC_DMA_TX_0 Channels" value="One"/>
+        <ctl name="VA_CDC_DMA_TX_0 VI Detection Enable" value="0"/>
+        <!-- Use stable TX path -->
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="One"/>
+        <ctl name="TX_CDC_DMA_TX_3 Format" value="S16_LE"/>
+        <ctl name="TX_CDC_DMA_TX_3 SampleRate" value="KHZ_48"/>
+    </path>
+
+    <path name="audio-playback-voip">
+        <!-- Stable RX path for VoIP -->
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="One"/>
+        <ctl name="RX_CDC_DMA_RX_0 Format" value="S16_LE"/>
+        <ctl name="RX_CDC_DMA_RX_0 SampleRate" value="KHZ_48"/>
+        <!-- Prevent sound trigger backend interference -->
+        <ctl name="VA_CDC_DMA_TX_0 VI Detection Enable" value="0"/>
+    </path>
+
+    <!-- Speaker VoIP paths -->
+    <path name="voice-speaker-2">
+        <ctl name="WSA_CDC_DMA_RX_0 Channels" value="Two"/>
+        <ctl name="WSA_CDC_DMA_RX_0 Format" value="S16_LE"/>
+        <ctl name="WSA_CDC_DMA_RX_0 SampleRate" value="KHZ_48"/>
+        <!-- Disable concurrent voice assistant -->
+        <ctl name="VA_CDC_DMA_TX_0 VI Detection Enable" value="0"/>
+    </path>
+
+    <path name="voice-speaker-mic">
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two"/>
+        <ctl name="TX_CDC_DMA_TX_3 Format" value="S16_LE"/>
+        <ctl name="TX_CDC_DMA_TX_3 SampleRate" value="KHZ_48"/>
+        <!-- Disable VA capture during call -->
+        <ctl name="VA_CDC_DMA_TX_0 VI Detection Enable" value="0"/>
+        <ctl name="VA_CDC_DMA_TX_0 Channels" value="One"/>
+    </path>
+
+    <!-- Notification mixing during VoIP -->
+    <path name="multimedia3-notification">
+        <!-- Allow notification playback without disrupting VoIP -->
+        <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia3" value="1"/>
+    </path>
+
+    <!-- Sound trigger paths - disabled during VoIP -->
+    <path name="listen-voice-wakeup-2">
+        <!-- This path will be disabled when VoIP is active -->
+        <ctl name="VA_CDC_DMA_TX_0 Channels" value="One"/>
+        <ctl name="VA_CDC_DMA_TX_0 Format" value="S16_LE"/>
+        <ctl name="VA_CDC_DMA_TX_0 SampleRate" value="KHZ_16"/>
+    </path>
+</mixer>
+    
 </mixer>
