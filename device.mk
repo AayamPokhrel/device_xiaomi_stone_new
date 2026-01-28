@@ -100,7 +100,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.voip.pcm.samplerate=48000 \
     persist.vendor.audio.voip_call_concurrency=true \
     ro.vendor.audio.sdk.fluencetype=none \
-    persist.vendor.audio.fluence.voicecall=false \
     persist.vendor.audio.fluence.voip=false \
     audio.deep_buffer.media=true \
     ro.vendor.audio.afe.record=true \
