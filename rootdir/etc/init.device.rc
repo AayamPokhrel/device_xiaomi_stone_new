@@ -1,0 +1,28 @@
+#Device attestation for stone
+#Sunstone
+on property:ro.boot.product.hardware.sku=sunstone_global
+    setprop ro.product.manufacturer_for_attestation Xiaomi
+    setprop ro.product.brand_for_attestation Redmi
+    setprop ro.product.device_for_attestation sunstone
+    setprop ro.product.name_for_attestation "Redmi Note 12 5G"
+    setprop ro.product.model_for_attestation "Redmi Note 12 5G"
+on property:ro.boot.product.hardware.sku=sunstone_in
+    setprop ro.product.manufacturer_for_attestation Xiaomi
+    setprop ro.product.brand_for_attestation Redmi
+    setprop ro.product.device_for_attestation sunstone
+    setprop ro.product.name_for_attestation "Redmi Note 12 5G"
+    setprop ro.product.model_for_attestation "Redmi Note 12 5G"
+on property:ro.boot.product.hardware.sku=sunstone_cn
+    setprop ro.product.manufacturer_for_attestation Xiaomi
+    setprop ro.product.brand_for_attestation Redmi
+    setprop ro.product.device_for_attestation sunstone
+    setprop ro.product.name_for_attestation "Redmi Note 12 5G"
+    setprop ro.product.model_for_attestation "Redmi Note 12 5G"
+
+#Moonstone
+on property:ro.boot.product.hardware.sku=moonstone_global
+    setprop ro.product.manufacturer_for_attestation Xiaomi
+    setprop ro.product.brand_for_attestation POCO
+    setprop ro.product.device_for_attestation moonstone
+    setprop ro.product.name_for_attestation "POCO X5 5G"
+    setprop ro.product.model_for_attestation "POCO X5 5G"

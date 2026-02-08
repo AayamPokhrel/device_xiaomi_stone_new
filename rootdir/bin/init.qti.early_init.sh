@@ -40,18 +40,9 @@ setprop ro.vendor.qti.soc_id $soc_id
 
 if [ "$soc_id" -eq 507 ]; then
     setprop ro.vendor.qti.soc_model SM6375
-    setprop ro.product.manufacturer_for_attestation Xiaomi
-    setprop ro.product.brand_for_attestation POCO
-    setprop ro.product.device_for_attestation moonstone
-    setprop ro.product.name_for_attestation "POCO X5 5G"
-    setprop ro.product.model_for_attestation "POCO X5 5G"
+
 elif [ "$soc_id" -eq 454 ]; then
     setprop ro.vendor.qti.soc_model SM4350
 elif [ "$soc_id" -eq 578 ]; then
     setprop ro.vendor.qti.soc_model SM4375
-    setprop ro.product.manufacturer_for_attestation Xiaomi
-    setprop ro.product.brand_for_attestation Redmi
-    setprop ro.product.device_for_attestation sunstone
-    setprop ro.product.name_for_attestation "Redmi Note 12 5G"
-    setprop ro.product.model_for_attestation "Redmi Note 12 5G"
 fi
